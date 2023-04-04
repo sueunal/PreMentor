@@ -32,7 +32,7 @@ struct LoginView: View {
                     .cornerRadius(5.0)
                     .padding(.bottom, 20)
                 Button{
-                    
+                   ProfileView()
                 }label:{
                     Text("로그인")
                     .font(.system(size:30))
