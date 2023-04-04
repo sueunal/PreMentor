@@ -10,6 +10,8 @@ import SwiftUI
 struct LoginView: View {
     @State private var username : String = ""
     @State private var password : String = ""
+    @State private var info : String = ""
+    @State private var number : String = ""
     var body: some View {
         ZStack{
             Color("OpenColor").ignoresSafeArea(.all)
@@ -19,12 +21,6 @@ struct LoginView: View {
                     .foregroundColor(.white)
                     .fontDesign(.serif)
                     .italic()
-                Text("PreMentor")
-                    .font(.system(size:40))
-                    .foregroundColor(.white)
-                    .fontDesign(.serif)
-                    .italic()
-                
                 TextField("Username", text: $username)
                     .padding()
                     .background(Color("lightGreyColor"))
@@ -41,12 +37,11 @@ struct LoginView: View {
                     Text("로그인")
                     .font(.system(size:30))
                     .foregroundColor(.yellow)
-                    .frame(width: 150,height: 50)
+                    .frame(width: 200,height: 50)
                     .background(.green)
-                    .cornerRadius(15)
+                    .cornerRadius(25)
                     .padding()
                 }
-                
             }
         }
     }
