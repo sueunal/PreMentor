@@ -19,6 +19,7 @@ struct ProfileView: View {
                         .frame(width: 100,height:100)
                         .aspectRatio(contentMode: .fit)
                         .cornerRadius(50)
+                        .padding()
                     VStack{
                         Text("프리멘티")
                             .font(.system(size:25))
@@ -39,25 +40,31 @@ struct ProfileView: View {
                         "발표 예시 검색하기",
                         text: $SearchValue
                     ).background(Color("lightGreyColor"))
-                        .padding(20)
+                        .padding(10)
                         .font(.system(size:25))
                         .bold()
-                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color("DefaultColor"), lineWidth: 2)
+                        )
                         .padding()
                     HStack{
-                        ZStack{
-                            Color("DefaultColor")
-                                .frame(width: 100,height: 100)
-                                .cornerRadius(20)
-                            VStack{
-                                Image(systemName: "doc.text")
-                                    .resizable()
-                                    .frame(width: 50,height: 60)
-                                    .aspectRatio(contentMode: .fit)
-                                Text("대본 교정하기")
-                                    .foregroundColor(.white)
-                                    .font(.caption)
-                                    .bold()
+                        Link(destination:URL(string: "https://github.com/sueunal")!){
+                            ZStack{
+                                Color("DefaultColor")
+                                    .frame(width: 100,height: 100)
+                                    .cornerRadius(20)
+                                VStack{
+                                    Image(systemName: "doc.text")
+                                        .resizable()
+                                        .frame(width: 50,height: 60)
+                                        .aspectRatio(contentMode: .fit)
+                                        .foregroundColor(.black)
+                                    Text("대본 교정하기")
+                                        .foregroundColor(.white)
+                                        .font(.caption)
+                                        .bold()
+                                }
                             }
                         }.padding()
                         ZStack{
@@ -77,7 +84,20 @@ struct ProfileView: View {
                         }
                         .padding()
                     }
-                    Spacer()
+                    ZStack{
+                        Color("lightGreyColor")
+                            .cornerRadius(20)
+                        VStack{
+                            Text("PreMentor")
+                                .font(.system(size:30))
+                                .foregroundColor(.blue)
+                                .underline()
+                                .bold()
+                                .italic()
+                        Spacer()
+                        }
+                    }
+                   Spacer()
                 }
             }
         }
