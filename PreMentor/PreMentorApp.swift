@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
-struct PreMentorApp: App {
+struct PreMentor :App{
+    init() {
+            FirebaseApp.configure() // 코드 추가
+        }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ProfileView()
         }
     }
 }
